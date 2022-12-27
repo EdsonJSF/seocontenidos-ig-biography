@@ -1,4 +1,111 @@
 <div class="row">
-  <div class="col-12 col-md-7 col-lg-8 col-xl-9 order-md-2">img</div>
-  <div class="col-12 col-md-5 col-lg-4 col-xl-3 order-md-1">text</div>
+  <!-- IG Biography -->
+  <div class="col-12 col-lg-8 col-xl-9 order-lg-2">
+    <div class="container-fluid">
+      <div class="row p-2 rounded shadow">
+        <div class="col-4">
+          <img
+            class="rounded-circle"
+            src="./favicon.ico"
+            alt=""
+            width="100"
+            height="100"
+          />
+        </div>
+        <div class="col-8 d-flex align-items-center">
+          <p class="m-0 px-2 text-center">
+            <span class="fw-bold">586</span> publicaciones
+          </p>
+          <p class="m-0 px-2 text-center">
+            <span class="fw-bold">123k</span> seguidores
+          </p>
+          <p class="m-0 px-2 text-center">
+            <span class="fw-bold">76</span> seguidos
+          </p>
+        </div>
+        <div class="col-12">
+          <!-- Nopmbre -->
+          <h1>Edson S</h1>
+          <!-- Presentación -->
+          <p>
+            {{ igBiography.value.miniBio }}<br />
+            {{ igBiography.value.autoridad }}<br />
+            {{ igBiography.value.descripcion }}<br />
+            {{ igBiography.value.alerta }}<br />
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Btn Copy -->
+    <div class="my-3 btn btn-primary">copy</div>
+  </div>
+  <!-- IG Biography Input -->
+  <div class="col-12 col-lg-4 col-xl-3 order-lg-1">
+    <form class="form" [formGroup]="igBiography">
+      <label for="miniBio">Minibio</label>
+      <input
+        class="form-control"
+        type="text"
+        formControlName="miniBio"
+        #miniBio
+      />
+      <p
+        [ngClass]="
+          igBiography.get('miniBio')?.invalid ? 'text-danger' : 'text-muted'
+        "
+      >
+        {{ igBiography.get("miniBio")?.value.length }} de 40 caracteres
+        recomendados
+      </p>
+
+      <label for="autoridad">Autoridad</label>
+      <input
+        class="form-control"
+        type="text"
+        formControlName="autoridad"
+        #autoridad
+      />
+      <p
+        [ngClass]="
+          igBiography.get('autoridad')?.invalid ? 'text-danger' : 'text-muted'
+        "
+      >
+        {{ igBiography.get("autoridad")?.value.length }} de 35 caracteres
+        recomendados
+      </p>
+
+      <label for="descripcion">Descripcion</label>
+      <input
+        class="form-control"
+        type="text"
+        formControlName="descripcion"
+        #descripcion
+      />
+      <p
+        [ngClass]="
+          igBiography.get('descripcion')?.invalid ? 'text-danger' : 'text-muted'
+        "
+      >
+        {{ igBiography.get("descripcion")?.value.length }} de 50 caracteres
+        recomendados
+      </p>
+
+      <label for="alerta">Alerta</label>
+      <input
+        class="form-control"
+        type="text"
+        formControlName="alerta"
+        #alerta
+      />
+      <p
+        [ngClass]="
+          igBiography.get('alerta')?.invalid ? 'text-danger' : 'text-muted'
+        "
+      >
+        {{ igBiography.get("alerta")?.value.length }} de 20 caracteres
+        recomendados
+      </p>
+    </form>
+  </div>
 </div>
