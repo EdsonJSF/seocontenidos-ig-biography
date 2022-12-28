@@ -3,7 +3,7 @@
   <div class="col-12 col-lg-8 col-xl-9 order-lg-2">
     <div class="container-fluid">
       <div class="row p-2 rounded shadow">
-        <div class="col-4">
+        <div class="col-4 col-md-3 col-xl-2">
           <img
             class="rounded-circle"
             src="./favicon.ico"
@@ -12,7 +12,7 @@
             height="100"
           />
         </div>
-        <div class="col-8 d-flex align-items-center">
+        <div class="col-8 col-md-9 col-xl-10 d-flex align-items-center">
           <p class="m-0 px-2 text-center">
             <span class="fw-bold">586</span> publicaciones
           </p>
@@ -23,22 +23,33 @@
             <span class="fw-bold">76</span> seguidos
           </p>
         </div>
-        <div class="col-12">
+        <div class="col-12 pb-1">
           <!-- Nopmbre -->
-          <h1>Edson S</h1>
+          <h1>Mi Nombre</h1>
           <!-- Presentación -->
-          <p>
-            {{ igBiography.value.miniBio }}<br />
-            {{ igBiography.value.autoridad }}<br />
-            {{ igBiography.value.descripcion }}<br />
-            {{ igBiography.value.alerta }}<br />
-          </p>
+          <ng-container
+            *ngIf="
+              igBiography.get('miniBio')?.value.length ||
+                igBiography.get('autoridad')?.value.length ||
+                igBiography.get('descripcion')?.value.length ||
+                igBiography.get('alerta')?.value.length;
+              else elseTemplate
+            "
+          >
+            <p class="m-0">{{ igBiography.value.miniBio }}</p>
+            <p class="m-0">{{ igBiography.value.autoridad }}</p>
+            <p class="m-0">{{ igBiography.value.descripcion }}</p>
+            <p class="m-0">{{ igBiography.value.alerta }}</p>
+          </ng-container>
+          <ng-template #elseTemplate>
+            <p class="m-0">Texto de ejemplo</p>
+          </ng-template>
         </div>
       </div>
     </div>
 
     <!-- Btn Copy -->
-    <div class="my-3 btn btn-primary">copy</div>
+    <div class="my-3 btn btn-primary" (click)="copiarAlPortapapeles()">copy</div>
   </div>
   <!-- IG Biography Input -->
   <div class="col-12 col-lg-4 col-xl-3 order-lg-1">
@@ -52,7 +63,7 @@
       />
       <p
         [ngClass]="
-          igBiography.get('miniBio')?.invalid ? 'text-danger' : 'text-muted'
+          igBiography.get('miniBio')?.errors?.['maxlength'] ? 'text-danger' : 'text-muted'
         "
       >
         {{ igBiography.get("miniBio")?.value.length }} de 40 caracteres
@@ -68,14 +79,14 @@
       />
       <p
         [ngClass]="
-          igBiography.get('autoridad')?.invalid ? 'text-danger' : 'text-muted'
+          igBiography.get('autoridad')?.errors?.['maxlength'] ? 'text-danger' : 'text-muted'
         "
       >
         {{ igBiography.get("autoridad")?.value.length }} de 35 caracteres
         recomendados
       </p>
 
-      <label for="descripcion">Descripcion</label>
+      <label for="descripcion">Descripción</label>
       <input
         class="form-control"
         type="text"
@@ -84,7 +95,7 @@
       />
       <p
         [ngClass]="
-          igBiography.get('descripcion')?.invalid ? 'text-danger' : 'text-muted'
+          igBiography.get('descripcion')?.errors?.['maxlength'] ? 'text-danger' : 'text-muted'
         "
       >
         {{ igBiography.get("descripcion")?.value.length }} de 50 caracteres
@@ -100,7 +111,7 @@
       />
       <p
         [ngClass]="
-          igBiography.get('alerta')?.invalid ? 'text-danger' : 'text-muted'
+          igBiography.get('alerta')?.errors?.['maxlength'] ? 'text-danger' : 'text-muted'
         "
       >
         {{ igBiography.get("alerta")?.value.length }} de 20 caracteres
