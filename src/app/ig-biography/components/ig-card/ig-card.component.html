@@ -40,8 +40,17 @@
 <!-- Btn Copy -->
 <div class="m-3 d-flex justify-content-end justify-content-lg-start">
   <div>
-    <button class="btn btn-primary" (click)="copiarAlPortapapeles()">
-      copy
+    <button
+      type="button"
+      class="btn btn-primary"
+      ngbPopover="Copiado !!"
+      [openDelay]="300"
+      [closeDelay]="800"
+      #p="ngbPopover"
+      (click)="p.open()"
+      (click)="copiarAlPortapapeles()"
+    >
+      Copiar
     </button>
   </div>
 </div>
