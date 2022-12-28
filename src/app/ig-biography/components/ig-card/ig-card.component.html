@@ -1,0 +1,47 @@
+<div class="p-3 rounded shadow">
+  <header class="d-flex align-items-center">
+    <img
+      class="ig-profile-img rounded-circle me-md-3 me-lg-4 me-xl-5"
+      src="./favicon.ico"
+      alt=""
+    />
+    <p class="m-0 ms-2 ms-md-3 text-center">
+      <span class="fw-bold">586</span> publicaciones
+    </p>
+    <p class="m-0 ms-2 text-center">
+      <span class="fw-bold">123k</span> seguidores
+    </p>
+    <p class="m-0 ms-2 text-center"><span class="fw-bold">76</span> seguidos</p>
+  </header>
+
+  <!-- Content -->
+  <div class="col-12 pb-1">
+    <h1>Mi Nombre</h1>
+    <ng-container
+      *ngIf="
+        igBiography.get('miniBio')?.value.length ||
+          igBiography.get('autoridad')?.value.length ||
+          igBiography.get('descripcion')?.value.length ||
+          igBiography.get('alerta')?.value.length;
+        else elseTemplate
+      "
+    >
+      <p class="m-0">{{ igBiography.value.miniBio }}</p>
+      <p class="m-0">{{ igBiography.value.autoridad }}</p>
+      <p class="m-0">{{ igBiography.value.descripcion }}</p>
+      <p class="m-0">{{ igBiography.value.alerta }}</p>
+    </ng-container>
+    <ng-template #elseTemplate>
+      <p class="m-0">Texto de ejemplo</p>
+    </ng-template>
+  </div>
+</div>
+
+<!-- Btn Copy -->
+<div class="m-3 d-flex justify-content-end justify-content-lg-start">
+  <div>
+    <button class="btn btn-primary" (click)="copiarAlPortapapeles()">
+      copy
+    </button>
+  </div>
+</div>

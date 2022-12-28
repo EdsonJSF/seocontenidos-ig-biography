@@ -1,56 +1,9 @@
 <div class="row">
-  <!-- IG Biography -->
+  <!-- IG Card Biography -->
   <div class="col-12 col-lg-8 col-xl-9 order-lg-2">
-    <div class="container-fluid">
-      <div class="row p-2 rounded shadow">
-        <div class="col-4 col-md-3 col-xl-2">
-          <img
-            class="rounded-circle"
-            src="./favicon.ico"
-            alt=""
-            width="100"
-            height="100"
-          />
-        </div>
-        <div class="col-8 col-md-9 col-xl-10 d-flex align-items-center">
-          <p class="m-0 px-2 text-center">
-            <span class="fw-bold">586</span> publicaciones
-          </p>
-          <p class="m-0 px-2 text-center">
-            <span class="fw-bold">123k</span> seguidores
-          </p>
-          <p class="m-0 px-2 text-center">
-            <span class="fw-bold">76</span> seguidos
-          </p>
-        </div>
-        <div class="col-12 pb-1">
-          <!-- Nopmbre -->
-          <h1>Mi Nombre</h1>
-          <!-- Presentación -->
-          <ng-container
-            *ngIf="
-              igBiography.get('miniBio')?.value.length ||
-                igBiography.get('autoridad')?.value.length ||
-                igBiography.get('descripcion')?.value.length ||
-                igBiography.get('alerta')?.value.length;
-              else elseTemplate
-            "
-          >
-            <p class="m-0">{{ igBiography.value.miniBio }}</p>
-            <p class="m-0">{{ igBiography.value.autoridad }}</p>
-            <p class="m-0">{{ igBiography.value.descripcion }}</p>
-            <p class="m-0">{{ igBiography.value.alerta }}</p>
-          </ng-container>
-          <ng-template #elseTemplate>
-            <p class="m-0">Texto de ejemplo</p>
-          </ng-template>
-        </div>
-      </div>
-    </div>
-
-    <!-- Btn Copy -->
-    <div class="my-3 btn btn-primary" (click)="copiarAlPortapapeles()">copy</div>
+    <app-ig-card [igBiography]="igBiography"></app-ig-card>
   </div>
+
   <!-- IG Biography Input -->
   <div class="col-12 col-lg-4 col-xl-3 order-lg-1">
     <form class="form" [formGroup]="igBiography">
