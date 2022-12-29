@@ -19,7 +19,7 @@
           igBiography.get('miniBio')?.errors?.['maxlength'] ? 'text-danger' : 'text-muted'
         "
       >
-        {{ igBiography.get("miniBio")?.value.length }} de 40 caracteres
+        {{ igBiography.get("miniBio")?.value.length }} de 35 caracteres
         recomendados
       </p>
 
@@ -35,7 +35,7 @@
           igBiography.get('autoridad')?.errors?.['maxlength'] ? 'text-danger' : 'text-muted'
         "
       >
-        {{ igBiography.get("autoridad")?.value.length }} de 35 caracteres
+        {{ igBiography.get("autoridad")?.value.length }} de 25 caracteres
         recomendados
       </p>
 
@@ -51,11 +51,11 @@
           igBiography.get('descripcion')?.errors?.['maxlength'] ? 'text-danger' : 'text-muted'
         "
       >
-        {{ igBiography.get("descripcion")?.value.length }} de 50 caracteres
+        {{ igBiography.get("descripcion")?.value.length }} de 45 caracteres
         recomendados
       </p>
 
-      <label for="alerta">Alerta</label>
+      <label for="alerta">LLamado a la acción</label>
       <input
         class="form-control"
         type="text"

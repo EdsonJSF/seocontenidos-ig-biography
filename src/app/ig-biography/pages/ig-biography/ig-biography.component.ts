@@ -18,9 +18,9 @@ export class IgBiographyComponent implements OnInit {
 
   initForm(): FormGroup {
     return this.formBuilder.group({
-      miniBio: ['', [Validators.maxLength(40)]],
-      autoridad: ['', [Validators.maxLength(35)]],
-      descripcion: ['', [Validators.maxLength(50)]],
+      miniBio: ['', [Validators.maxLength(35)]],
+      autoridad: ['', [Validators.maxLength(25)]],
+      descripcion: ['', [Validators.maxLength(45)]],
       alerta: ['', [Validators.maxLength(20)]],
     });
   }
