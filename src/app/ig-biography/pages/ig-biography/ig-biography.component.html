@@ -7,69 +7,80 @@
   <!-- IG Biography Input -->
   <div class="col-12 col-lg-4 col-xl-3 order-lg-1">
     <form class="form" [formGroup]="igBiography">
-      <label for="miniBio">Minibio</label>
+      <label class="fw-bold" for="miniBio">Minibio</label>
       <input
+        id="miniBio"
         class="form-control"
         type="text"
         formControlName="miniBio"
-        #miniBio
+        maxlength="35"
       />
-      <p
-        [ngClass]="
-          igBiography.get('miniBio')?.errors?.['maxlength'] ? 'text-danger' : 'text-muted'
-        "
-      >
+      <p class="m-0 text-muted">
         {{ igBiography.get("miniBio")?.value.length }} de 35 caracteres
         recomendados
       </p>
+      <p class="px-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, dolorem?</p>
 
-      <label for="autoridad">Autoridad</label>
+      <label class="fw-bold" for="autoridad">Autoridad</label>
       <input
+        id="autoridad"
         class="form-control"
         type="text"
         formControlName="autoridad"
-        #autoridad
+        maxlength="25"
       />
-      <p
-        [ngClass]="
-          igBiography.get('autoridad')?.errors?.['maxlength'] ? 'text-danger' : 'text-muted'
-        "
-      >
+      <p class="m-0 text-muted">
         {{ igBiography.get("autoridad")?.value.length }} de 25 caracteres
         recomendados
       </p>
+      <p class="px-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, dolorem?</p>
 
-      <label for="descripcion">Descripción</label>
+      <label class="fw-bold" for="descripcion">Descripción</label>
       <input
+        id="descripcion"
         class="form-control"
         type="text"
         formControlName="descripcion"
-        #descripcion
+        maxlength="45"
       />
-      <p
-        [ngClass]="
-          igBiography.get('descripcion')?.errors?.['maxlength'] ? 'text-danger' : 'text-muted'
-        "
-      >
+      <p class="m-0 text-muted">
         {{ igBiography.get("descripcion")?.value.length }} de 45 caracteres
         recomendados
       </p>
+      <p class="px-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, dolorem?</p>
 
-      <label for="alerta">LLamado a la acción</label>
+      <label class="fw-bold" for="alerta">LLamado a la acción</label>
       <input
+        id="alerta"
         class="form-control"
         type="text"
         formControlName="alerta"
-        #alerta
+        [maxlength]="150 + alertaLength"
       />
       <p
+        class="m-0"
         [ngClass]="
-          igBiography.get('alerta')?.errors?.['maxlength'] ? 'text-danger' : 'text-muted'
+          igBiography.get('alerta')?.value.length > 120 + alertaLength
+            ? 'text-danger'
+            : 'text-muted'
         "
       >
-        {{ igBiography.get("alerta")?.value.length }} de 20 caracteres
-        recomendados
+        {{ igBiography.get("alerta")?.value.length }} de
+        {{ 120 + alertaLength }} caracteres recomendados
       </p>
+      <p
+        *ngIf="igBiography.get('alerta')?.value.length > 120 + alertaLength"
+        class="m-0 text-danger"
+      >
+        Superaste los 120 caracteres
+      </p>
+      <p
+        *ngIf="igBiography.get('alerta')?.value.length >= 150 + alertaLength"
+        class="m-0 text-danger"
+      >
+        Llegaste a los 150 caracteres de instagram
+      </p>
+      <p class="px-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, dolorem?</p>
     </form>
   </div>
 </div>
