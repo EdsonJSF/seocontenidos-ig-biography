@@ -50,3 +50,31 @@
     </button>
   </div>
 </div>
+
+<ng-template #offcanvas let-offcanvas>
+  <div class="offcanvas-header">
+    <h4 class="offcanvas-title">Gracias !!!</h4>
+    <button
+      type="button"
+      class="btn-close"
+      aria-label="Close"
+      (click)="offcanvas.dismiss('Cross click')"
+    ></button>
+  </div>
+  <div class="offcanvas-body">
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus,
+      corrupti.
+    </p>
+
+    <div class="text-end">
+      <a
+        class="btn btn-outline-dark"
+        (click)="offcanvas.close('Close click')"
+        (click)="clearForm()"
+      >
+        Crea otra biografía
+      </a>
+    </div>
+  </div>
+</ng-template>

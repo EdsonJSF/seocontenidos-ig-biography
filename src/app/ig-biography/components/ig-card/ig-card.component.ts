@@ -1,5 +1,14 @@
-import { Component, Input, OnInit } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  Input,
+  OnInit,
+  TemplateRef,
+  ViewChild,
+} from '@angular/core';
 import { FormGroup } from '@angular/forms';
+
+import { NgbOffcanvas } from '@ng-bootstrap/ng-bootstrap';
 
 import { ToastService } from 'src/app/shared/components/toast/toast.service';
 
@@ -10,8 +19,12 @@ import { ToastService } from 'src/app/shared/components/toast/toast.service';
 })
 export class IgCardComponent implements OnInit {
   @Input() igBiography!: FormGroup;
+  @ViewChild('offcanvas') offcanvas!: ElementRef<HTMLInputElement>;
 
-  constructor(public toastService: ToastService) {}
+  constructor(
+    public toastService: ToastService,
+    private offcanvasService: NgbOffcanvas
+  ) {}
 
   ngOnInit(): void {}
 
@@ -47,6 +60,9 @@ ${this.igBiography.value.alerta.trim()}`.trim();
     document.body.removeChild(aux);
 
     this.showStandard();
+    setTimeout(() => {
+      this.offcanvasService.open(this.offcanvas, { position: 'bottom' });
+    }, 800);
   }
 
   showStandard() {
@@ -55,6 +71,10 @@ ${this.igBiography.value.alerta.trim()}`.trim();
       faIcon: 'fa-solid fa-check',
       delay: 800,
     });
+  }
+
+  clearForm() {
+    window.location = window.location
   }
 
   ngOnDestroy(): void {
