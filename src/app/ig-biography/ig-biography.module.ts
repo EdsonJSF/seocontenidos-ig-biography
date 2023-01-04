@@ -9,9 +9,11 @@ import { IgBiographyRoutingModule } from './ig-biography-routing.module';
 import { IgBiographyComponent } from './pages/ig-biography/ig-biography.component';
 import { IgCardComponent } from './components/ig-card/ig-card.component';
 import { InputsComponent } from './components/inputs/inputs.component';
+import { IgMockupComponent } from './components/ig-mockup/ig-mockup.component';
+import { IgLabelsComponent } from './components/ig-labels/ig-labels.component';
 
 @NgModule({
-  declarations: [IgBiographyComponent, IgCardComponent, InputsComponent],
+  declarations: [IgBiographyComponent, IgCardComponent, InputsComponent, IgMockupComponent, IgLabelsComponent],
   imports: [
     CommonModule,
     IgBiographyRoutingModule,

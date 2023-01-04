@@ -11,8 +11,6 @@ import { InputsService } from '../../services/inputs.service';
 export class InputsComponent implements OnInit {
   @Input() igBiography!: FormGroup;
 
-  _alertaLength: number = 150;
-
   constructor(
     private toastService: ToastService,
     private inputsService: InputsService
@@ -21,13 +19,12 @@ export class InputsComponent implements OnInit {
   ngOnInit(): void {}
 
   public get alertaLength(): number {
-    this._alertaLength =
+    return (
       0 -
       this.igBiography.get('miniBio')?.value.length -
       this.igBiography.get('autoridad')?.value.length -
-      this.igBiography.get('descripcion')?.value.length;
-
-    return this._alertaLength;
+      this.igBiography.get('descripcion')?.value.length
+    );
   }
 
   copiarAlPortapapeles() {
