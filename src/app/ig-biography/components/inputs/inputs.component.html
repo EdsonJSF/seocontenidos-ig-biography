@@ -5,7 +5,6 @@
       id="inputNombre"
       class="form-control"
       placeholder="Nombre de mi cuenta"
-      aria-describedby="nombre"
       maxlength="30"
       autocomplete="off"
       formControlName="nombre"
@@ -13,7 +12,14 @@
       (change)="changeActive('nombre')"
       (blur)="changeActive('')"
     />
-    <span class="input-group-text" id="nombre">
+    <span
+      class="input-group-text bg-primary d-lg-none"
+      (click)="show = true"
+      (click)="selected = 0"
+    >
+      <i class="fa-solid fa-question text-white"></i>
+    </span>
+    <span class="input-group-text">
       {{ 30 - igBiography.value.nombre.length }}
     </span>
     <span
@@ -33,7 +39,6 @@
       type="text"
       class="form-control"
       placeholder="A quien le hablo"
-      aria-describedby="miniBio"
       maxlength="35"
       autocomplete="off"
       formControlName="miniBio"
@@ -41,7 +46,14 @@
       (change)="changeActive('miniBio')"
       (blur)="changeActive('')"
     />
-    <span class="input-group-text" id="miniBio">
+    <span
+      class="input-group-text bg-primary d-lg-none"
+      (click)="show = true"
+      (click)="selected = 1"
+    >
+      <i class="fa-solid fa-question text-white"></i>
+    </span>
+    <span class="input-group-text">
       {{ 35 - igBiography.value.miniBio.length }}
     </span>
   </div>
@@ -59,6 +71,13 @@
       (change)="changeActive('autoridad')"
       (blur)="changeActive('')"
     />
+    <span
+      class="input-group-text bg-primary d-lg-none"
+      (click)="show = true"
+      (click)="selected = 2"
+    >
+      <i class="fa-solid fa-question text-white"></i>
+    </span>
     <span class="input-group-text" id="autoridad">
       {{ 25 - igBiography.value.autoridad.length }}
     </span>
@@ -77,6 +96,13 @@
       (change)="changeActive('descripcion')"
       (blur)="changeActive('')"
     />
+    <span
+      class="input-group-text bg-primary d-lg-none"
+      (click)="show = true"
+      (click)="selected = 3"
+    >
+      <i class="fa-solid fa-question text-white"></i>
+    </span>
     <span class="input-group-text" id="descripcion">
       {{ 45 - igBiography.value.descripcion.length }}
     </span>
@@ -95,8 +121,33 @@
       (change)="changeActive('alerta')"
       (blur)="changeActive('')"
     />
+    <span
+      class="input-group-text bg-primary d-lg-none"
+      (click)="show = true"
+      (click)="selected = 4"
+    >
+      <i class="fa-solid fa-question text-white"></i>
+    </span>
     <span class="input-group-text" id="alerta">
       {{ 150 + alertaLength - igBiography.value.alerta.length }}
     </span>
   </div>
 </form>
+
+<div
+  *ngIf="show"
+  class="position-absolute w-100 vh-100 top-0 start-0 z-index-1200"
+  (click)="show = false"
+>
+  <ngb-toast
+    class="w-auto fs-1 p-3 position-fixed top-50 start-50 translate-middle bg-white"
+    [autohide]="false"
+    (hidden)="show = false"
+  >
+    <ng-template ngbToastHeader>
+      <div class="me-auto">{{ inputs[selected].title }}</div>
+    </ng-template>
+
+    {{ inputs[selected].content }}
+  </ngb-toast>
+</div>

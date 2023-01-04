@@ -10,6 +10,7 @@ import { InputsService } from '../../services/inputs.service';
 })
 export class IgLabelsComponent implements OnInit {
   @Input() igBiography!: FormGroup;
+  inputs: any[] = [];
 
   public get alertaLength(): number {
     return (
@@ -26,5 +27,7 @@ export class IgLabelsComponent implements OnInit {
 
   constructor(private inputsService: InputsService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.inputs = this.inputsService.inputs;
+  }
 }

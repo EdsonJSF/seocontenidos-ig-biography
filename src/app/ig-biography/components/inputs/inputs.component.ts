@@ -10,13 +10,18 @@ import { InputsService } from '../../services/inputs.service';
 })
 export class InputsComponent implements OnInit {
   @Input() igBiography!: FormGroup;
+  inputs: any[] = [];
+  show: boolean = false;
+  selected: number = 0;
 
   constructor(
     private toastService: ToastService,
     private inputsService: InputsService
   ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.inputs = this.inputsService.inputs;
+  }
 
   public get alertaLength(): number {
     return (

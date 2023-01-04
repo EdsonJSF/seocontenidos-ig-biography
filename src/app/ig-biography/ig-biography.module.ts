@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-import { NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbTooltipModule, NgbToastModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { IgBiographyRoutingModule } from './ig-biography-routing.module';
 
@@ -22,6 +22,7 @@ import { IgBioContentComponent } from './components/ig-bio-content/ig-bio-conten
     FormsModule,
     ReactiveFormsModule,
     NgbTooltipModule,
+    NgbToastModule
   ],
 })
 export class IgBiographyModule {}

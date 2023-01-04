@@ -6,6 +6,44 @@ import { Injectable } from '@angular/core';
 export class InputsService {
   private _activeInput: string = '';
 
+  inputs = [
+    {
+      title: 'Nombre de mi cuenta',
+      content:
+        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, dolorem?',
+      name: 'nombre',
+      css: 'bg-primary text-white',
+    },
+    {
+      title: '¿A quien le hablo?',
+      content:
+        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, dolorem?',
+      name: 'miniBio',
+      css: 'bg-danger text-white',
+    },
+    {
+      title: '¿Que hago por ellos?',
+      content:
+        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, dolorem?',
+      name: 'autoridad',
+      css: 'bg-warning',
+    },
+    {
+      title: '¿Que me diferencia?',
+      content:
+        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, dolorem?',
+      name: 'descripcion',
+      css: 'bg-success text-white',
+    },
+    {
+      title: 'LLamado a la acción',
+      content:
+        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, dolorem?',
+      name: 'alerta',
+      css: 'bg-secondary text-white',
+    },
+  ];
+
   constructor() {}
 
   public get activeInput(): string {

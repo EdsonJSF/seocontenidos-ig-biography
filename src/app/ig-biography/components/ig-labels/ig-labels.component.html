@@ -1,50 +1,11 @@
 <div
+  *ngFor="let input of inputs"
   class="mb-3 p-2 rounded"
-  [class]="activeInput == 'nombre' ? 'bg-primary text-white' : ''"
+  [class]="activeInput == input.name ? input.css : ''"
 >
-  <p class="m-0 fw-bold">Nombre de mi cuenta</p>
+  <p class="m-0 fw-bold">{{ input.title }}</p>
   <p class="m-0 px-2">
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, dolorem?
-  </p>
-</div>
-
-<div
-  class="mb-3 p-2 rounded"
-  [class]="activeInput == 'miniBio' ? 'bg-danger text-white' : ''"
->
-  <p class="m-0 fw-bold">A quien le hablo</p>
-  <p class="m-0 px-2">
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, dolorem?
-  </p>
-</div>
-
-<div
-  class="mb-3 p-2 rounded"
-  [class]="activeInput == 'autoridad' ? 'bg-warning' : ''"
->
-  <p class="m-0 fw-bold">Que hago por ellos</p>
-  <p class="m-0 px-2">
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, dolorem?
-  </p>
-</div>
-
-<div
-  class="mb-3 p-2 rounded"
-  [class]="activeInput == 'descripcion' ? 'bg-success text-white' : ''"
->
-  <p class="m-0 fw-bold">Que me diferencia</p>
-  <p class="m-0 px-2">
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, dolorem?
-  </p>
-</div>
-
-<div
-  class="mb-3 p-2 rounded"
-  [class]="activeInput == 'alerta' ? 'bg-secondary text-white' : ''"
->
-  <p class="m-0 fw-bold">LLamado a la acción</p>
-  <p class="m-0 px-2">
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, dolorem?
+    {{ input.content }}
   </p>
 </div>
 
