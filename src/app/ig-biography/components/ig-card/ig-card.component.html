@@ -1,18 +1,8 @@
 <div class="p-3 rounded shadow">
-  <header class="d-flex align-items-center">
-    <i class="fa-solid fa-user ig-profile-img rounded-circle me-md-3 me-lg-4 me-xl-5 bg-gray d-flex align-items-center justify-content-center p-4"></i>
-    <div class="m-0 ms-2 ms-md-3">
-      <h2>Mi_cuenta</h2>
-      <div class="d-flex align-items-center">
-        <p class="m-0 text-center"><span class="fw-bold">586</span> publicaciones</p>
-        <p class="m-0 ms-2 text-center"><span class="fw-bold">123k</span> seguidores</p>
-        <p class="m-0 ms-2 text-center"><span class="fw-bold">76</span> seguidos</p>
-      </div>
-    </div>
-  </header>
+  <app-ig-header></app-ig-header>
 
   <!-- Content -->
-  <div class="col-12 pt-3">
+  <div class="col-12">
     <app-inputs [igBiography]="igBiography"></app-inputs>
   </div>
 </div>

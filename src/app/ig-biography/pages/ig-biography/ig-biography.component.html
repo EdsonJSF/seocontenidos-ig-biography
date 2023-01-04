@@ -2,12 +2,17 @@
 
 <div class="row">
   <!-- IG Card Biography -->
-  <div class="col-12 col-lg-8 col-xl-9 order-lg-2">
+  <div class="col order-lg-2">
     <app-ig-card [igBiography]="igBiography"></app-ig-card>
   </div>
 
   <!-- IG Labels Biography -->
-  <div class="col-12 col-lg-4 col-xl-3 order-lg-1">
+  <div class="col-12 col-lg-2 order-lg-1 d-none d-lg-block">
     <app-ig-labels [igBiography]="igBiography"></app-ig-labels>
   </div>
+
+  <div class="col order-3 d-none d-lg-block">
+    <app-ig-mockup [igBiography]="igBiography"></app-ig-mockup>
+  </div>
 </div>
+

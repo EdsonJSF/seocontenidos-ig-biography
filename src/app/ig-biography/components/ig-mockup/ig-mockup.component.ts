@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-ig-mockup',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./ig-mockup.component.scss'],
 })
 export class IgMockupComponent implements OnInit {
+  @Input() igBiography!: FormGroup;
+
   constructor() {}
 
   ngOnInit(): void {}

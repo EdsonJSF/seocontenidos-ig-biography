@@ -5,14 +5,14 @@
       class="form-control"
       placeholder="Nombre de mi cuenta"
       aria-describedby="nombre"
-      maxlength="35"
+      maxlength="30"
       formControlName="nombre"
       (click)="changeActive('nombre')"
       (change)="changeActive('nombre')"
       (blur)="changeActive('')"
     />
     <span class="input-group-text" id="nombre">
-      {{ 35 - igBiography.value.nombre.length }}
+      {{ 30 - igBiography.value.nombre.length }}
     </span>
     <span
       class="input-group-text btn btn-primary"
