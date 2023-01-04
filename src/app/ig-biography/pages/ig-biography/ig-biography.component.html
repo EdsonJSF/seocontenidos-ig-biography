@@ -1,86 +1,79 @@
+<h2 class="text-center py-3">Simulador de biografía instagram</h2>
+
 <div class="row">
   <!-- IG Card Biography -->
   <div class="col-12 col-lg-8 col-xl-9 order-lg-2">
     <app-ig-card [igBiography]="igBiography"></app-ig-card>
   </div>
 
-  <!-- IG Biography Input -->
+  <!-- IG Biography -->
   <div class="col-12 col-lg-4 col-xl-3 order-lg-1">
-    <form class="form" [formGroup]="igBiography">
-      <label class="fw-bold" for="miniBio">Minibio</label>
-      <p class="m-0 px-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, dolorem?</p>
-      <input
-        id="miniBio"
-        class="form-control"
-        type="text"
-        formControlName="miniBio"
-        maxlength="35"
-      />
-      <p class="text-muted">
-        {{ igBiography.get("miniBio")?.value.length }} de 35 caracteres
-        recomendados
+    <div
+      class="mb-3 p-2 rounded"
+      [class]="activeInput == 'nombre' ? 'bg-secondary text-white' : ''"
+    >
+      <p class="m-0 fw-bold">Nonbre de mi cuenta</p>
+      <p class="m-0 px-2">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam,
+        dolorem?
       </p>
+    </div>
 
-      <label class="fw-bold" for="autoridad">Autoridad</label>
-      <p class="m-0 px-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, dolorem?</p>
-      <input
-        id="autoridad"
-        class="form-control"
-        type="text"
-        formControlName="autoridad"
-        maxlength="25"
-      />
-      <p class="text-muted">
-        {{ igBiography.get("autoridad")?.value.length }} de 25 caracteres
-        recomendados
+    <div
+      class="mb-3 p-2 rounded"
+      [class]="activeInput == 'miniBio' ? 'bg-secondary text-white' : ''"
+    >
+      <p class="m-0 fw-bold">A quien le hablo</p>
+      <p class="m-0 px-2">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam,
+        dolorem?
       </p>
+    </div>
 
-      <label class="fw-bold" for="descripcion">Descripción</label>
-      <p class="m-0 px-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, dolorem?</p>
-      <input
-        id="descripcion"
-        class="form-control"
-        type="text"
-        formControlName="descripcion"
-        maxlength="45"
-      />
-      <p class="text-muted">
-        {{ igBiography.get("descripcion")?.value.length }} de 45 caracteres
-        recomendados
+    <div
+      class="mb-3 p-2 rounded"
+      [class]="activeInput == 'autoridad' ? 'bg-secondary text-white' : ''"
+    >
+      <p class="m-0 fw-bold">Que hago por ellos</p>
+      <p class="m-0 px-2">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam,
+        dolorem?
       </p>
+    </div>
 
-      <label class="fw-bold" for="alerta">LLamado a la acción</label>
-      <p class="m-0 px-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, dolorem?</p>
-      <input
-        id="alerta"
-        class="form-control"
-        type="text"
-        formControlName="alerta"
-        [maxlength]="150 + alertaLength"
-      />
-      <p
-        class="m-0"
-        [ngClass]="
-          igBiography.get('alerta')?.value.length > 120 + alertaLength
-            ? 'text-danger'
-            : 'text-muted'
-        "
-      >
-        {{ igBiography.get("alerta")?.value.length }} de
-        {{ 120 + alertaLength }} caracteres recomendados
+    <div
+      class="mb-3 p-2 rounded"
+      [class]="activeInput == 'descripcion' ? 'bg-secondary text-white' : ''"
+    >
+      <p class="m-0 fw-bold">Que me diferencia</p>
+      <p class="m-0 px-2">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam,
+        dolorem?
       </p>
-      <p
-        *ngIf="igBiography.get('alerta')?.value.length > 120 + alertaLength"
-        class="m-0 text-danger"
-      >
-        Superaste los 120 caracteres
+    </div>
+
+    <div
+      class="mb-3 p-2 rounded"
+      [class]="activeInput == 'alerta' ? 'bg-secondary text-white' : ''"
+    >
+      <p class="m-0 fw-bold">LLamado a la acción</p>
+      <p class="m-0 px-2">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam,
+        dolorem?
       </p>
+    </div>
+
+    <div
+      class="p-2 rounded bg-danger text-white"
+      *ngIf="igBiography.get('alerta')?.value.length > 120 + alertaLength"
+    >
+      <p class="m-0">Superaste los 120 caracteres</p>
       <p
         *ngIf="igBiography.get('alerta')?.value.length >= 150 + alertaLength"
-        class="m-0 text-danger"
+        class="m-0"
       >
         Llegaste a los 150 caracteres de instagram
       </p>
-    </form>
+    </div>
   </div>
 </div>

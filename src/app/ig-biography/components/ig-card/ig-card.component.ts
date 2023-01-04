@@ -30,7 +30,7 @@ export class IgCardComponent implements OnInit {
 
   copiarAlPortapapeles(isCorrect: boolean) {
     if (!isCorrect) {
-      this.toastService.show('LLene todos los campos', {
+      this.toastService.show('LLene correctamente los campos', {
         classname: 'bg-danger text-light',
         faIcon: 'fa-solid fa-circle-exclamation',
         delay: 1500,

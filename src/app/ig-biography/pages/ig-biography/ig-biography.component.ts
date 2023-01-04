@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { InputsService } from '../../services/inputs.service';
 
 @Component({
   selector: 'app-ig-biography',
@@ -10,7 +11,14 @@ export class IgBiographyComponent implements OnInit {
   igBiography!: FormGroup;
   _alertaLength: number = 150;
 
-  constructor(private formBuilder: FormBuilder) {}
+  public get activeInput(): string {
+    return this.inputsService.activeInput;
+  }
+
+  constructor(
+    private formBuilder: FormBuilder,
+    private inputsService: InputsService
+  ) {}
 
   ngOnInit(): void {
     this.igBiography = this.initForm();
@@ -28,10 +36,11 @@ export class IgBiographyComponent implements OnInit {
 
   initForm(): FormGroup {
     return this.formBuilder.group({
+      nombre: [''],
       miniBio: ['', [Validators.required, Validators.maxLength(35)]],
       autoridad: ['', [Validators.required, Validators.maxLength(25)]],
       descripcion: ['', [Validators.required, Validators.maxLength(45)]],
-      alerta: ['', [Validators.required, Validators.maxLength(20)]],
+      alerta: ['', [Validators.required]],
     });
   }
 }

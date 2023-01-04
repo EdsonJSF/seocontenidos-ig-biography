@@ -5,11 +5,13 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { IgBiographyRoutingModule } from './ig-biography-routing.module';
+
 import { IgBiographyComponent } from './pages/ig-biography/ig-biography.component';
 import { IgCardComponent } from './components/ig-card/ig-card.component';
+import { InputsComponent } from './components/inputs/inputs.component';
 
 @NgModule({
-  declarations: [IgBiographyComponent, IgCardComponent],
+  declarations: [IgBiographyComponent, IgCardComponent, InputsComponent],
   imports: [
     CommonModule,
     IgBiographyRoutingModule,
