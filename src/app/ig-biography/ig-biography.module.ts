@@ -12,9 +12,10 @@ import { InputsComponent } from './components/inputs/inputs.component';
 import { IgMockupComponent } from './components/ig-mockup/ig-mockup.component';
 import { IgLabelsComponent } from './components/ig-labels/ig-labels.component';
 import { IgHeaderComponent } from './components/ig-header/ig-header.component';
+import { IgBioContentComponent } from './components/ig-bio-content/ig-bio-content.component';
 
 @NgModule({
-  declarations: [IgBiographyComponent, IgCardComponent, InputsComponent, IgMockupComponent, IgLabelsComponent, IgHeaderComponent],
+  declarations: [IgBiographyComponent, IgCardComponent, InputsComponent, IgMockupComponent, IgLabelsComponent, IgHeaderComponent, IgBioContentComponent],
   imports: [
     CommonModule,
     IgBiographyRoutingModule,

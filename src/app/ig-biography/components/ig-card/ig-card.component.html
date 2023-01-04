@@ -1,5 +1,6 @@
 <div class="p-3 rounded shadow">
   <app-ig-header></app-ig-header>
+  <app-ig-bio-content [igBiography]="igBiography" class="d-lg-none"></app-ig-bio-content>
 
   <!-- Content -->
   <div class="col-12">
@@ -12,7 +13,7 @@
   <div>
     <button
       type="button"
-      class="btn btn-primary"
+      class="btn btn-primary text-white"
       (click)="copiarAlPortapapeles(igBiography.valid)"
       ngbTooltip="Copiar la biografía"
     >

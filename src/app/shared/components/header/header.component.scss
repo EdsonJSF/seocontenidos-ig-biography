@@ -1,0 +1,15 @@
+.header-bar {
+  height: 1.2rem;
+  background: rgb(66, 132, 243);
+  background: linear-gradient(
+    90deg,
+    rgba(66, 132, 243, 1) 0%,
+    rgba(66, 132, 243, 1) 25%,
+    rgba(219, 68, 55, 1) 25%,
+    rgba(219, 68, 55, 1) 50%,
+    rgba(243, 179, 0, 1) 50%,
+    rgba(243, 179, 0, 1) 75%,
+    rgba(15, 156, 88, 1) 75%,
+    rgba(15, 156, 88, 1) 100%
+  );
+}

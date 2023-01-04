@@ -2,10 +2,12 @@
   <div class="input-group mb-3">
     <input
       type="text"
+      id="inputNombre"
       class="form-control"
       placeholder="Nombre de mi cuenta"
       aria-describedby="nombre"
       maxlength="30"
+      autocomplete="off"
       formControlName="nombre"
       (click)="changeActive('nombre')"
       (change)="changeActive('nombre')"
@@ -15,7 +17,7 @@
       {{ 30 - igBiography.value.nombre.length }}
     </span>
     <span
-      class="input-group-text btn btn-primary"
+      class="input-group-text btn btn-primary text-white"
       ngbTooltip="Copiar el nombre"
       (click)="copiarAlPortapapeles()"
     >
@@ -33,6 +35,7 @@
       placeholder="A quien le hablo"
       aria-describedby="miniBio"
       maxlength="35"
+      autocomplete="off"
       formControlName="miniBio"
       (click)="changeActive('miniBio')"
       (change)="changeActive('miniBio')"
@@ -42,6 +45,7 @@
       {{ 35 - igBiography.value.miniBio.length }}
     </span>
   </div>
+
   <div class="input-group mb-3">
     <input
       type="text"
@@ -49,6 +53,7 @@
       placeholder="Que hago por ellos"
       aria-describedby="autoridad"
       maxlength="25"
+      autocomplete="off"
       formControlName="autoridad"
       (click)="changeActive('autoridad')"
       (change)="changeActive('autoridad')"
@@ -58,6 +63,7 @@
       {{ 25 - igBiography.value.autoridad.length }}
     </span>
   </div>
+
   <div class="input-group mb-3">
     <input
       type="text"
@@ -65,6 +71,7 @@
       placeholder="Que me diferencia"
       aria-describedby="descripcion"
       maxlength="45"
+      autocomplete="off"
       formControlName="descripcion"
       (click)="changeActive('descripcion')"
       (change)="changeActive('descripcion')"
@@ -74,6 +81,7 @@
       {{ 45 - igBiography.value.descripcion.length }}
     </span>
   </div>
+
   <div class="input-group mb-3">
     <input
       type="text"
@@ -81,6 +89,7 @@
       placeholder="LLamado a la acción"
       aria-describedby="alerta"
       [maxlength]="150 + alertaLength"
+      autocomplete="off"
       formControlName="alerta"
       (click)="changeActive('alerta')"
       (change)="changeActive('alerta')"

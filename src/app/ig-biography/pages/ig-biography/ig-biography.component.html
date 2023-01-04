@@ -1,16 +1,17 @@
-<h2 class="text-center py-3">Simulador de biografía instagram</h2>
+<h1 class="h2 text-center py-3">Simulador de biografía instagram</h1>
 
 <div class="row">
-  <!-- IG Card Biography -->
-  <div class="col order-lg-2">
-    <app-ig-card [igBiography]="igBiography"></app-ig-card>
-  </div>
-
   <!-- IG Labels Biography -->
-  <div class="col-12 col-lg-2 order-lg-1 d-none d-lg-block">
+  <div class="col-12 col-lg-2 d-none d-lg-block">
     <app-ig-labels [igBiography]="igBiography"></app-ig-labels>
   </div>
 
+  <!-- IG Card Biography -->
+  <div class="col">
+    <app-ig-card [igBiography]="igBiography"></app-ig-card>
+  </div>
+
+  <!-- IG Mockup Biography -->
   <div class="col order-3 d-none d-lg-block">
     <app-ig-mockup [igBiography]="igBiography"></app-ig-mockup>
   </div>
