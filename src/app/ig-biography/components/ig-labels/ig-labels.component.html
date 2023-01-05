@@ -1,7 +1,7 @@
 <div
   *ngFor="let input of inputs"
   class="p-2 rounded"
-  [class]="activeInput == input.name ? input.css : ''"
+  [class]="activeInput == input.name ? input.css : activeInput ? 'text-muted' : ''"
 >
   <p class="m-0 fw-bold">{{ input.title }}</p>
   <p class="m-0 px-2 fs-7">

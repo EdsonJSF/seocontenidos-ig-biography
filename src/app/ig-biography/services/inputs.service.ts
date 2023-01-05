@@ -22,14 +22,14 @@ export class InputsService {
       css: 'bg-danger text-white',
     },
     {
-      title: '¿Que hago por ellos?',
+      title: '¿Qué hago por ellos?',
       content:
         'Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, dolorem?',
       name: 'autoridad',
       css: 'bg-warning',
     },
     {
-      title: '¿Que me diferencia?',
+      title: '¿Qué me diferencia?',
       content:
         'Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, dolorem?',
       name: 'descripcion',
