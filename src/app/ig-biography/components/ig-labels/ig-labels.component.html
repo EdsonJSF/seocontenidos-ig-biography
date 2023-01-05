@@ -1,10 +1,10 @@
 <div
   *ngFor="let input of inputs"
-  class="mb-3 p-2 rounded"
+  class="p-2 rounded"
   [class]="activeInput == input.name ? input.css : ''"
 >
   <p class="m-0 fw-bold">{{ input.title }}</p>
-  <p class="m-0 px-2">
+  <p class="m-0 px-2 fs-7">
     {{ input.content }}
   </p>
 </div>
