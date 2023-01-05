@@ -1,6 +1,4 @@
-<h1 class="h2 m-0 text-center pt-3">
-  Simulador de biografía instagram
-</h1>
+<h1 class="h2 m-0 text-center pt-3">Simulador de biografía instagram</h1>
 <p class="m-0 text-muted text-center pb-3">por seocontenidos</p>
 
 <div class="row">
@@ -17,5 +15,13 @@
   <!-- IG Mockup Biography -->
   <div class="col order-3 d-none d-lg-block">
     <app-ig-mockup [igBiography]="igBiography"></app-ig-mockup>
+  </div>
+
+  <div class="col-12 order-3 d-none d-lg-block">
+    <emoji-mart
+      [style]="{ width: '100%' }"
+      [i18n]="i18n"
+      (emojiClick)="addEmoji($event)"
+    ></emoji-mart>
   </div>
 </div>
