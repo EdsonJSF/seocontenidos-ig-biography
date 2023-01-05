@@ -3,6 +3,8 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 import { environment } from 'src/environments/environment';
 
+import { ToastService } from 'src/app/shared/components/toast/toast.service';
+
 @Component({
   selector: 'app-ig-biography',
   templateUrl: './ig-biography.component.html',
@@ -12,7 +14,10 @@ export class IgBiographyComponent implements OnInit {
   igBiography!: FormGroup;
   i18n = environment.i18n;
 
-  constructor(private formBuilder: FormBuilder) {}
+  constructor(
+    private formBuilder: FormBuilder,
+    private toastService: ToastService
+  ) {}
 
   ngOnInit(): void {
     this.igBiography = this.initForm();
@@ -46,5 +51,11 @@ export class IgBiographyComponent implements OnInit {
 
     // Elimina el campo de la página
     document.body.removeChild(aux);
+
+    this.toastService.show('Copiado', {
+      classname: 'bg-success text-light',
+      faIcon: 'fa-solid fa-check',
+      delay: 800,
+    });
   }
 }
