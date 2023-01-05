@@ -4,7 +4,7 @@
       type="text"
       id="inputNombre"
       class="form-control"
-      placeholder="Nombre de mi cuenta"
+      [placeholder]="inputs[0].title"
       maxlength="30"
       autocomplete="off"
       formControlName="nombre"
@@ -38,7 +38,7 @@
     <input
       type="text"
       class="form-control"
-      placeholder="A quien le hablo"
+      [placeholder]="inputs[1].title"
       maxlength="35"
       autocomplete="off"
       formControlName="miniBio"
@@ -62,7 +62,7 @@
     <input
       type="text"
       class="form-control"
-      placeholder="Que hago por ellos"
+      [placeholder]="inputs[2].title"
       aria-describedby="autoridad"
       maxlength="25"
       autocomplete="off"
@@ -87,7 +87,7 @@
     <input
       type="text"
       class="form-control"
-      placeholder="Que me diferencia"
+      [placeholder]="inputs[3].title"
       aria-describedby="descripcion"
       maxlength="45"
       autocomplete="off"
@@ -112,7 +112,7 @@
     <input
       type="text"
       class="form-control"
-      placeholder="LLamado a la acción"
+      [placeholder]="inputs[4].title"
       aria-describedby="alerta"
       [maxlength]="150 + alertaLength"
       autocomplete="off"
