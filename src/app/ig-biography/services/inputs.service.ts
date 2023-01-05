@@ -36,7 +36,7 @@ export class InputsService {
       css: 'bg-success text-white',
     },
     {
-      title: 'LLamado a la acción',
+      title: 'Llamado a la acción',
       content:
         'Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, dolorem?',
       name: 'alerta',
