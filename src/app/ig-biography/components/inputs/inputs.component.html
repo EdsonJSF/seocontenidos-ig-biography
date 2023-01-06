@@ -60,14 +60,14 @@
   (click)="show = false"
 >
   <ngb-toast
-    class="w-auto fs-1 p-3 position-fixed top-50 start-50 translate-middle bg-white"
+    class="p-2 position-fixed top-50 start-50 translate-middle bg-white"
     [autohide]="false"
     (hidden)="show = false"
   >
     <ng-template ngbToastHeader>
-      <div class="me-auto">{{ inputs[selected].title }}</div>
+      <div class="me-auto fs-5 fw-bold text-dark">{{ inputs[selected].title }}</div>
     </ng-template>
 
-    {{ inputs[selected].content }}
+    <p class="m-0">{{ inputs[selected].content }}</p>
   </ngb-toast>
 </div>
