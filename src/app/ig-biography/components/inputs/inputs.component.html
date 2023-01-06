@@ -1,141 +1,56 @@
 <form class="form" [formGroup]="igBiography">
-  <div class="input-group mb-3">
-    <input
-      type="text"
-      id="inputNombre"
-      class="form-control"
-      [placeholder]="inputs[0].title"
-      maxlength="30"
-      autocomplete="off"
-      formControlName="nombre"
-      (click)="changeActive('nombre')"
-      (change)="changeActive('nombre')"
-      (focus)="changeActive('nombre')"
-      (blur)="changeActive('')"
-    />
-    <span
-      class="input-group-text bg-primary d-lg-none"
-      (click)="show = true"
-      (click)="selected = 0"
-    >
-      <i class="fa-solid fa-question text-white"></i>
-    </span>
-    <span class="input-group-text">
-      {{ 30 - igBiography.value.nombre.length }}
-    </span>
-    <span
-      class="input-group-text btn btn-primary text-white"
-      ngbTooltip="Copiar el nombre"
-      (click)="copiarAlPortapapeles()"
-    >
-      Copiar nombre
-    </span>
-  </div>
+  <div *ngFor="let input of inputs; let i = index">
+    <div class="input-group mb-3">
+      <input
+        type="text"
+        [id]="input.name"
+        class="form-control"
+        [placeholder]="input.title"
+        [maxlength]="i >= 4 ? input.maxlength + alertaLength : input.maxlength"
+        autocomplete="off"
+        [formControlName]="input.name"
+        (click)="changeActive(input.name)"
+        (change)="changeActive(input.name)"
+        (focus)="changeActive(input.name)"
+        (blur)="changeActive('')"
+      />
 
-  <hr />
+      <!-- How to fill the input -->
+      <span
+        class="input-group-text bg-primary d-lg-none"
+        (click)="show = true"
+        (click)="selected = i"
+      >
+        <i class="fa-solid fa-question text-white"></i>
+      </span>
 
-  <!-- IG Biography Input -->
-  <div class="input-group mb-3">
-    <input
-      type="text"
-      class="form-control"
-      [placeholder]="inputs[1].title"
-      maxlength="35"
-      autocomplete="off"
-      formControlName="miniBio"
-      (click)="changeActive('miniBio')"
-      (change)="changeActive('miniBio')"
-      (focus)="changeActive('miniBio')"
-      (blur)="changeActive('')"
-    />
-    <span
-      class="input-group-text bg-primary d-lg-none"
-      (click)="show = true"
-      (click)="selected = 1"
-    >
-      <i class="fa-solid fa-question text-white"></i>
-    </span>
-    <span class="input-group-text">
-      {{ 35 - igBiography.value.miniBio.length }}
-    </span>
-  </div>
+      <!-- Display emojis modal -->
+      <span
+        class="input-group-text bg-white d-none d-lg-block"
+        (click)="diplayEmojis()"
+      >
+        <i class="fa-regular fa-face-smile"></i>
+      </span>
 
-  <div class="input-group mb-3">
-    <input
-      type="text"
-      class="form-control"
-      [placeholder]="inputs[2].title"
-      aria-describedby="autoridad"
-      maxlength="25"
-      autocomplete="off"
-      formControlName="autoridad"
-      (click)="changeActive('autoridad')"
-      (change)="changeActive('autoridad')"
-      (focus)="changeActive('autoridad')"
-      (blur)="changeActive('')"
-    />
-    <span
-      class="input-group-text bg-primary d-lg-none"
-      (click)="show = true"
-      (click)="selected = 2"
-    >
-      <i class="fa-solid fa-question text-white"></i>
-    </span>
-    <span class="input-group-text" id="autoridad">
-      {{ 25 - igBiography.value.autoridad.length }}
-    </span>
-  </div>
+      <!-- Max length box -->
+      <span class="input-group-text" [class]="!i || 'rounded-end'">
+        {{
+          (i >= 4 ? input.maxlength + alertaLength : input.maxlength) -
+            igBiography.value[input.name].length
+        }}
+      </span>
 
-  <div class="input-group mb-3">
-    <input
-      type="text"
-      class="form-control"
-      [placeholder]="inputs[3].title"
-      aria-describedby="descripcion"
-      maxlength="45"
-      autocomplete="off"
-      formControlName="descripcion"
-      (click)="changeActive('descripcion')"
-      (change)="changeActive('descripcion')"
-      (focus)="changeActive('descripcion')"
-      (blur)="changeActive('')"
-    />
-    <span
-      class="input-group-text bg-primary d-lg-none"
-      (click)="show = true"
-      (click)="selected = 3"
-    >
-      <i class="fa-solid fa-question text-white"></i>
-    </span>
-    <span class="input-group-text" id="descripcion">
-      {{ 45 - igBiography.value.descripcion.length }}
-    </span>
-  </div>
-
-  <div class="input-group mb-3">
-    <input
-      type="text"
-      class="form-control"
-      [placeholder]="inputs[4].title"
-      aria-describedby="alerta"
-      [maxlength]="150 + alertaLength"
-      autocomplete="off"
-      formControlName="alerta"
-      (click)="changeActive('alerta')"
-      (change)="changeActive('alerta')"
-      (focus)="changeActive('alerta')"
-      (blur)="changeActive('')"
-    />
-    <span
-      class="input-group-text bg-primary d-lg-none"
-      (click)="show = true"
-      (click)="selected = 4"
-    >
-      <i class="fa-solid fa-question text-white"></i>
-    </span>
-    <span class="input-group-text" id="alerta">
-      {{ 150 + alertaLength - igBiography.value.alerta.length }}
-    </span>
+      <!-- Button copy name -->
+      <span
+        *ngIf="!i"
+        class="input-group-text btn btn-primary text-white"
+        ngbTooltip="Copiar el nombre"
+        (click)="copiarAlPortapapeles()"
+      >
+        Copiar nombre
+      </span>
+    </div>
+    <hr *ngIf="!i" />
   </div>
 </form>
 

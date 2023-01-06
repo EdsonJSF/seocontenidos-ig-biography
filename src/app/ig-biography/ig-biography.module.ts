@@ -6,8 +6,6 @@ import { NgbTooltipModule, NgbToastModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { IgBiographyRoutingModule } from './ig-biography-routing.module';
 
-import { PickerModule } from '@ctrl/ngx-emoji-mart';
-
 import { IgBiographyComponent } from './pages/ig-biography/ig-biography.component';
 import { IgCardComponent } from './components/ig-card/ig-card.component';
 import { InputsComponent } from './components/inputs/inputs.component';
@@ -33,7 +31,6 @@ import { IgBioContentComponent } from './components/ig-bio-content/ig-bio-conten
     ReactiveFormsModule,
     NgbTooltipModule,
     NgbToastModule,
-    PickerModule,
   ],
 })
 export class IgBiographyModule {}

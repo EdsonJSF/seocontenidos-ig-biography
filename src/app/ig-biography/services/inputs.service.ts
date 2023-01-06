@@ -11,36 +11,41 @@ export class InputsService {
       title: 'Nombre de mi cuenta',
       content:
         'Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, dolorem?',
-      name: 'nombre',
       css: 'bg-primary text-white',
+      name: 'nombre',
+      maxlength: 30
     },
     {
       title: '¿A quien le hablo?',
       content:
         'Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, dolorem?',
-      name: 'miniBio',
       css: 'bg-danger text-white',
+      name: 'miniBio',
+      maxlength: 35
     },
     {
       title: '¿Qué hago por ellos?',
       content:
         'Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, dolorem?',
-      name: 'autoridad',
       css: 'bg-warning',
+      name: 'autoridad',
+      maxlength: 25
     },
     {
       title: '¿Qué me diferencia?',
       content:
         'Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, dolorem?',
-      name: 'descripcion',
       css: 'bg-success text-white',
+      name: 'descripcion',
+      maxlength: 45
     },
     {
       title: 'Llamado a la acción',
       content:
         'Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, dolorem?',
-      name: 'alerta',
       css: 'bg-secondary text-white',
+      name: 'alerta',
+      maxlength: 150
     },
   ];
 

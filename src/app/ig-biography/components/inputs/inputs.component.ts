@@ -1,7 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
+
 import { ToastService } from 'src/app/shared/components/toast/toast.service';
 import { InputsService } from '../../services/inputs.service';
+import { EmojisMartService } from '../../../shared/components/emojis-mart/emojis-mart.service';
 
 @Component({
   selector: 'app-inputs',
@@ -16,7 +18,8 @@ export class InputsComponent implements OnInit {
 
   constructor(
     private toastService: ToastService,
-    private inputsService: InputsService
+    private inputsService: InputsService,
+    private emojisMartService: EmojisMartService
   ) {}
 
   ngOnInit(): void {
@@ -33,8 +36,7 @@ export class InputsComponent implements OnInit {
   }
 
   copiarAlPortapapeles() {
-    const inputNombre =
-      document.querySelector<HTMLInputElement>('#inputNombre');
+    const inputNombre = document.querySelector<HTMLInputElement>('#nombre');
     if (!inputNombre?.value) {
       this.toastService.show('LLene correctamente el campo', {
         classname: 'bg-danger text-light',
@@ -71,5 +73,9 @@ export class InputsComponent implements OnInit {
 
   changeActive(active: string) {
     this.inputsService.activateInput(active);
+  }
+
+  diplayEmojis() {
+    this.emojisMartService.changeMode(true);
   }
 }
