@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 import { environment } from 'src/environments/environment';
 
@@ -10,7 +10,7 @@ import { InputsService } from '../../../ig-biography/services/inputs.service';
   templateUrl: './emojis-mart.component.html',
   styleUrls: ['./emojis-mart.component.scss'],
 })
-export class EmojisMartComponent implements OnInit {
+export class EmojisMartComponent {
   i18n = environment.i18n;
 
   public get show(): boolean {
@@ -25,8 +25,6 @@ export class EmojisMartComponent implements OnInit {
     private emojisMartService: EmojisMartService,
     private inputsService: InputsService
   ) {}
-
-  ngOnInit(): void {}
 
   addEmoji(event: any) {
     this.inputsService.igInputForm.value += event.emoji.native;

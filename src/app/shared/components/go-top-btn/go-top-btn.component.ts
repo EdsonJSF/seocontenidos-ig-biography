@@ -1,11 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-go-top-btn',
   templateUrl: './go-top-btn.component.html',
   styleUrls: ['./go-top-btn.component.scss'],
 })
-export class GoTopBtnComponent implements OnInit {
+export class GoTopBtnComponent {
   private _displayBtn: boolean = false;
 
   get displayBtn(): boolean {
@@ -17,8 +17,6 @@ export class GoTopBtnComponent implements OnInit {
       this.scrolling();
     };
   }
-
-  ngOnInit(): void {}
 
   scrolling() {
     if (

@@ -1,11 +1,4 @@
-import {
-  Component,
-  ElementRef,
-  Input,
-  OnInit,
-  TemplateRef,
-  ViewChild,
-} from '@angular/core';
+import { Component, ElementRef, Input, ViewChild } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 
 import { NgbOffcanvas } from '@ng-bootstrap/ng-bootstrap';
@@ -17,7 +10,7 @@ import { ToastService } from 'src/app/shared/components/toast/toast.service';
   templateUrl: './ig-card.component.html',
   styleUrls: ['./ig-card.component.scss'],
 })
-export class IgCardComponent implements OnInit {
+export class IgCardComponent {
   @Input() igBiography!: FormGroup;
   @ViewChild('offcanvas') offcanvas!: ElementRef<HTMLInputElement>;
 
@@ -25,8 +18,6 @@ export class IgCardComponent implements OnInit {
     public toastService: ToastService,
     private offcanvasService: NgbOffcanvas
   ) {}
-
-  ngOnInit(): void {}
 
   copiarAlPortapapeles(isCorrect: boolean) {
     if (!isCorrect) {
@@ -74,7 +65,7 @@ ${this.igBiography.value.alerta.trim()}`.trim();
   }
 
   clearForm() {
-    window.location = window.location
+    window.location = window.location;
   }
 
   ngOnDestroy(): void {

@@ -50,8 +50,6 @@ export class InputsService {
     },
   ];
 
-  constructor() {}
-
   public get activeInput(): string {
     return this._activeInput;
   }

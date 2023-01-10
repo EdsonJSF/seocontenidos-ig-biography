@@ -10,8 +10,6 @@ export class EmojisMartService {
     return this._show;
   }
 
-  constructor() {}
-
   changeMode(show: boolean) {
     this._show = show;
   }

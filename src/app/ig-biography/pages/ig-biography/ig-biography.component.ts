@@ -1,10 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
-import { environment } from 'src/environments/environment';
-
-import { ToastService } from 'src/app/shared/components/toast/toast.service';
-
 @Component({
   selector: 'app-ig-biography',
   templateUrl: './ig-biography.component.html',
@@ -13,10 +9,7 @@ import { ToastService } from 'src/app/shared/components/toast/toast.service';
 export class IgBiographyComponent implements OnInit {
   igBiography!: FormGroup;
 
-  constructor(
-    private formBuilder: FormBuilder,
-    private toastService: ToastService
-  ) {}
+  constructor(private formBuilder: FormBuilder) {}
 
   ngOnInit(): void {
     this.igBiography = this.initForm();

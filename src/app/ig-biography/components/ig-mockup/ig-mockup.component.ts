@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 
 @Component({
@@ -6,10 +6,6 @@ import { FormGroup } from '@angular/forms';
   templateUrl: './ig-mockup.component.html',
   styleUrls: ['./ig-mockup.component.scss'],
 })
-export class IgMockupComponent implements OnInit {
+export class IgMockupComponent {
   @Input() igBiography!: FormGroup;
-
-  constructor() {}
-
-  ngOnInit(): void {}
 }
