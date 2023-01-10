@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 
 import { environment } from 'src/environments/environment';
 
-import { ToastService } from '../toast/toast.service';
 import { EmojisMartService } from './emojis-mart.service';
+import { InputsService } from '../../../ig-biography/services/inputs.service';
 
 @Component({
   selector: 'app-emojis-mart',
@@ -17,14 +17,25 @@ export class EmojisMartComponent implements OnInit {
     return this.emojisMartService.show;
   }
 
+  public get activeInput(): string {
+    return this.inputsService.activeInput;
+  }
+
   constructor(
-    private toastService: ToastService,
-    private emojisMartService: EmojisMartService
+    private emojisMartService: EmojisMartService,
+    private inputsService: InputsService
   ) {}
 
   ngOnInit(): void {}
 
   addEmoji(event: any) {
+    this.inputsService.igInputForm.value += event.emoji.native;
+
+    const input = document.getElementById(
+      this.activeInput
+    )! as HTMLInputElement;
+    input.value += event.emoji.native;
+
     // Crea un campo de texto "oculto"
     var aux = document.createElement('textarea');
 
@@ -42,17 +53,10 @@ export class EmojisMartComponent implements OnInit {
 
     // Elimina el campo de la página
     document.body.removeChild(aux);
-
-    this.emojisMartService.changeMode(false);
-
-    this.toastService.show('Copiado', {
-      classname: 'bg-success text-light',
-      faIcon: 'fa-solid fa-check',
-      delay: 800,
-    });
   }
 
   hideEmojis() {
-    this.emojisMartService.changeMode(false)
+    this.inputsService.activateInput('');
+    this.emojisMartService.changeMode(false);
   }
 }

@@ -1,3 +1,8 @@
 <div class="modal-emoji" *ngIf="show">
-  <emoji-mart [i18n]="i18n" (emojiClick)="addEmoji($event)"></emoji-mart>
+  <div class="d-flex flex-column">
+    <div class="btn btn-danger text-white ms-auto" (click)="hideEmojis()">
+      <i class="fa-solid fa-x"></i>
+    </div>
+    <emoji-mart [i18n]="i18n" (emojiClick)="addEmoji($event)"></emoji-mart>
+  </div>
 </div>

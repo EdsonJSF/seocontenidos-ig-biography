@@ -78,4 +78,8 @@ export class InputsComponent implements OnInit {
   diplayEmojis() {
     this.emojisMartService.changeMode(true);
   }
+
+  setIgInputForm(inputName: string) {
+    this.inputsService.igInputForm = this.igBiography.get(inputName);
+  }
 }

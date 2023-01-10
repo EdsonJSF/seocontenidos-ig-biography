@@ -5,6 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class InputsService {
   private _activeInput: string = '';
+  igInputForm!: any;
 
   inputs = [
     {
@@ -13,7 +14,7 @@ export class InputsService {
         'Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, dolorem?',
       css: 'bg-primary text-white',
       name: 'nombre',
-      maxlength: 30
+      maxlength: 30,
     },
     {
       title: '¿A quien le hablo?',
@@ -21,7 +22,7 @@ export class InputsService {
         'Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, dolorem?',
       css: 'bg-danger text-white',
       name: 'miniBio',
-      maxlength: 35
+      maxlength: 35,
     },
     {
       title: '¿Qué hago por ellos?',
@@ -29,7 +30,7 @@ export class InputsService {
         'Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, dolorem?',
       css: 'bg-warning',
       name: 'autoridad',
-      maxlength: 25
+      maxlength: 25,
     },
     {
       title: '¿Qué me diferencia?',
@@ -37,7 +38,7 @@ export class InputsService {
         'Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, dolorem?',
       css: 'bg-success text-white',
       name: 'descripcion',
-      maxlength: 45
+      maxlength: 45,
     },
     {
       title: 'Llamado a la acción',
@@ -45,7 +46,7 @@ export class InputsService {
         'Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, dolorem?',
       css: 'bg-secondary text-white',
       name: 'alerta',
-      maxlength: 150
+      maxlength: 150,
     },
   ];
 

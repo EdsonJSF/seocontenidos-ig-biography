@@ -27,6 +27,8 @@
       <!-- Display emojis modal -->
       <span
         class="input-group-text bg-white d-none d-lg-block"
+        (click)="changeActive(input.name)"
+        (click)="setIgInputForm(input.name)"
         (click)="diplayEmojis()"
       >
         <i class="fa-regular fa-face-smile"></i>
@@ -65,7 +67,9 @@
     (hidden)="show = false"
   >
     <ng-template ngbToastHeader>
-      <div class="me-auto fs-5 fw-bold text-dark">{{ inputs[selected].title }}</div>
+      <div class="me-auto fs-5 fw-bold text-dark">
+        {{ inputs[selected].title }}
+      </div>
     </ng-template>
 
     <p class="m-0">{{ inputs[selected].content }}</p>
