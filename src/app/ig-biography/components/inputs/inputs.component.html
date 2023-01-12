@@ -35,7 +35,7 @@
       </span>
 
       <!-- Max length box -->
-      <span class="input-group-text" [class]="!i || 'rounded-end'">
+      <span class="input-group-text" [class]="i ? 'rounded-end' : ''">
         {{
           (i >= 4 ? input.maxlength + alertaLength : input.maxlength) -
             igBiography.value[input.name].length
