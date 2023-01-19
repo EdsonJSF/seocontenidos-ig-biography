@@ -12,16 +12,7 @@ export class IgLabelsComponent implements OnInit {
   @Input() igBiography!: FormGroup;
   inputs: any[] = [];
 
-  public get alertaLength(): number {
-    return (
-      0 -
-      this.igBiography.get('miniBio')?.value.length -
-      this.igBiography.get('autoridad')?.value.length -
-      this.igBiography.get('descripcion')?.value.length
-    );
-  }
-
-  public get activeInput(): string {
+    public get activeInput(): string {
     return this.inputsService.activeInput;
   }
 

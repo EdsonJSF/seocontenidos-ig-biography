@@ -1,0 +1,12 @@
+<div
+  class="p-2 rounded bg-danger text-white"
+  *ngIf="igBiography.get('alerta')?.value.length > 120 + alertaLength"
+>
+  <p class="m-0 h5">Superaste los 120 caracteres</p>
+  <p
+    *ngIf="igBiography.get('alerta')?.value.length >= 150 + alertaLength"
+    class="m-0 h5"
+  >
+    Llegaste a los 150 caracteres de instagram
+  </p>
+</div>

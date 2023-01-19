@@ -13,6 +13,7 @@ import { IgMockupComponent } from './components/ig-mockup/ig-mockup.component';
 import { IgLabelsComponent } from './components/ig-labels/ig-labels.component';
 import { IgHeaderComponent } from './components/ig-header/ig-header.component';
 import { IgBioContentComponent } from './components/ig-bio-content/ig-bio-content.component';
+import { MessageLengthComponent } from './components/message-length/message-length.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { IgBioContentComponent } from './components/ig-bio-content/ig-bio-conten
     IgLabelsComponent,
     IgHeaderComponent,
     IgBioContentComponent,
+    MessageLengthComponent,
   ],
   imports: [
     CommonModule,
