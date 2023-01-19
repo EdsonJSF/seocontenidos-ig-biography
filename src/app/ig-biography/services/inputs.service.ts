@@ -11,7 +11,7 @@ export class InputsService {
     {
       title: 'Nombre de mi cuenta',
       content:
-        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, dolorem?',
+        'Escribe 3 palabras claves que identifiquen lo que hace tu negocio. Ejemplos: Marketing, Ferreteria, Panaderia',
       css: 'bg-primary text-white',
       name: 'nombre',
       maxlength: 30,
@@ -19,7 +19,7 @@ export class InputsService {
     {
       title: '¿A quien le hablo?',
       content:
-        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, dolorem?',
+        'Describe a las personas a quien va dirigido tu contenido. Ejemplo: Emprendedores exitosos, Mujeres con buen gusto, etc,',
       css: 'bg-danger text-white',
       name: 'miniBio',
       maxlength: 35,
@@ -27,7 +27,7 @@ export class InputsService {
     {
       title: '¿Qué hago por ellos?',
       content:
-        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, dolorem?',
+        'Escribe que hacer por ellos en la cuenta. Ejemplo: Te daremos consejos de maquillaje, Te asesoramos para cuidar tu salud, etc',
       css: 'bg-warning',
       name: 'autoridad',
       maxlength: 25,
@@ -35,7 +35,7 @@ export class InputsService {
     {
       title: '¿Qué me diferencia?',
       content:
-        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, dolorem?',
+        'Escribe que te hace diferente, ?porque eres mejor que otros?, ejemplo: Tenemos 8 años de expriencia, estamos certificados, etc',
       css: 'bg-success text-white',
       name: 'descripcion',
       maxlength: 45,
@@ -43,7 +43,7 @@ export class InputsService {
     {
       title: 'Llamado a la acción',
       content:
-        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, dolorem?',
+        'Pideles que te sigan o te contacten y prometeles algo a cambio. Ejemplo: Siguenos para que despegues en redes, contactanos para darte un descuento',
       css: 'bg-secondary text-white',
       name: 'alerta',
       maxlength: 150,

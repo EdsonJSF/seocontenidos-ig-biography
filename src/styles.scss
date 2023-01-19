@@ -1,5 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
 
+@font-face {
+  font-family: Product Sans Regular;
+  src: url(./assets/fonts/product-sans-regular.ttf);
+}
+
+$font-family-sans-serif: Product Sans Regular, system-ui, Roboto, sans-serif;
+
 $primary: #4284f3;
 $danger: #db4437;
 $warning: #f3b300;
