@@ -11,15 +11,15 @@ export class InputsService {
     {
       title: 'Nombre de mi cuenta',
       content:
-        'Escribe 3 palabras claves que identifiquen lo que hace tu negocio. Ejemplos: Marketing, Ferreteria, Panaderia',
+        'Escribe 3 palabras claves que identifiquen lo que hace tu negocio. Ejemplos: Marketing, Ferreteria, Panaderia.',
       css: 'bg-primary text-white',
       name: 'nombre',
       maxlength: 30,
     },
     {
-      title: '¿A quien le hablo?',
+      title: '¿A quién le hablo?',
       content:
-        'Describe a las personas a quien va dirigido tu contenido. Ejemplo: Emprendedores exitosos, Mujeres con buen gusto, etc,',
+        'Describe a las personas a quien va dirigido tu contenido. Ejemplo: Emprendedores exitosos, mujeres con buen gusto, etc.',
       css: 'bg-danger text-white',
       name: 'miniBio',
       maxlength: 35,
@@ -27,7 +27,7 @@ export class InputsService {
     {
       title: '¿Qué hago por ellos?',
       content:
-        'Escribe que hacer por ellos en la cuenta. Ejemplo: Te daremos consejos de maquillaje, Te asesoramos para cuidar tu salud, etc',
+        'Escribe qué hacer por ellos en la cuenta. Ejemplo: Te daremos consejos de maquillaje, te asesoramos para cuidar tu salud, etc.',
       css: 'bg-warning',
       name: 'autoridad',
       maxlength: 25,
@@ -35,7 +35,7 @@ export class InputsService {
     {
       title: '¿Qué me diferencia?',
       content:
-        'Escribe que te hace diferente, ?porque eres mejor que otros?, ejemplo: Tenemos 8 años de expriencia, estamos certificados, etc',
+        'Escribe qué te hace diferente, ¿por qué eres mejor que otros? Ejemplo: Tenemos 8 años de experiencia, estamos certificados, etc.',
       css: 'bg-success text-white',
       name: 'descripcion',
       maxlength: 45,
@@ -43,7 +43,7 @@ export class InputsService {
     {
       title: 'Llamado a la acción',
       content:
-        'Pideles que te sigan o te contacten y prometeles algo a cambio. Ejemplo: Siguenos para que despegues en redes, contactanos para darte un descuento',
+        'Pídeles que te sigan o te contacten y promételes algo a cambio. Ejemplo: Síguenos para que despegues en redes, contáctanos para darte un descuento.',
       css: 'bg-secondary text-white',
       name: 'alerta',
       maxlength: 150,

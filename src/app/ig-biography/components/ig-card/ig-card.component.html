@@ -24,7 +24,7 @@
 
 <ng-template #offcanvas let-offcanvas>
   <div class="offcanvas-header">
-    <h4 class="offcanvas-title">Gracias !!!</h4>
+    <h4 class="offcanvas-title">¡Gracias! </h4>
     <button
       type="button"
       class="btn-close"
@@ -34,17 +34,23 @@
   </div>
   <div class="offcanvas-body">
     <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus,
-      corrupti.
+      Gracias por utilizar nuestra herramienta, nos ayudaría mucho que lo compartas en tus redes sociales y nos menciones como <a href="https://www.instagram.com/seocontenidos/" target="_blank">@seocontenidos</a>
     </p>
 
     <div class="text-end">
       <a
-        class="btn btn-outline-dark"
+        class="btn btn-outline-success"
         (click)="offcanvas.close('Close click')"
         (click)="clearForm()"
       >
         Crea otra biografía
+      </a>
+      <a
+        class="btn btn-primary text-white ms-1"
+        href="https://www.instagram.com/"
+        target="_blank"
+      >
+        Ir a Instagram
       </a>
     </div>
   </div>
